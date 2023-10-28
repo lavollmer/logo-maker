@@ -5,7 +5,7 @@ const fs = require("fs")
 const inquirer = require("inquirer")
 
 // shapes function
-const { shapes } = require("./lib/shapes");
+const { Shape } = require("./lib/shapes.js");
 
 //asking user prompt questions for logo
 inquirer.prompt([
@@ -34,10 +34,24 @@ inquirer.prompt([
   }
 ]).then(answers => {
   console.log(answers);
-  //write the logosvg file
-  fs.writeFile("logo.svg", answers, (error) => {
-    if (error) console.log("error");
-    // run the user answers through the shapes function
-    console.log(shapes(answers.textLogo, answers.colorTextLogo, answers.shapeLogo, answers.colorLogo))
-  })
+  return answers;
 })
+
+
+// give error if doesn't run
+function writeFile(answers) {
+  //write the logosvg file
+  fs.writeFile('logo.svg', answers, (err) =>
+    err ? console.error(err) : console.log('Done!'))
+}
+
+// intiatilizes the write file with SVG
+function init() {
+  //write the logosvg file
+  return prompt().then(answers => {
+    writeFile(renderSVG(answers))
+  })
+}
+
+//starts the app
+init();
