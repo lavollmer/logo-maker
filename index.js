@@ -1,11 +1,14 @@
-
-const fs = require("fs")
+const fs = require("fs");
 
 //using inquirer for prompt
-const inquirer = require("inquirer")
+const inquirer = require("inquirer");
 
-// shapes function
-const { Shape } = require("./lib/shapes.js");
+// define all items from other shapes.js
+// const { Shape } = require("./lib/shapes.js");
+// const { Triangle } = require("./lib/shapes.js");
+// const { Square } = require("./lib/shapes.js");
+// const { Circle } = require("./lib/shapes.js");
+const { renderSVG } = require("./lib/shapes.js");
 
 //asking user prompt questions for logo
 inquirer.prompt([
@@ -48,8 +51,8 @@ function writeFile(answers) {
 // intiatilizes the write file with SVG
 function init() {
   //write the logosvg file
-  return prompt().then(answers => {
-    writeFile(renderSVG(answers))
+  inquirer.prompt().then(answers => {
+    writeFile(renderSVG(answers));
   })
 }
 
