@@ -8,7 +8,7 @@ const inquirer = require("inquirer");
 // const { Triangle } = require("./lib/shapes.js");
 // const { Square } = require("./lib/shapes.js");
 // const { Circle } = require("./lib/shapes.js");
-const { renderSVG } = require("./lib/shapes.js");
+const { renderSVG } = require("./lib/shapes");
 
 //asking user prompt questions for logo
 inquirer.prompt([
