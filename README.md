@@ -8,7 +8,7 @@ This solves the problem of creating an SVG image for an end user.
 
 ## Usage
 
-Video Submission: 
+Video Submission: (https://drive.google.com/file/d/1RZFH9m08NgvzWOmgTfGifvGVV8TT4nzT/view?usp=sharing);
 
 ## Credits
 This project was a product of the U of MN bootcamp Fall 2023.
