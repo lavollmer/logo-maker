@@ -20,7 +20,7 @@ function init() {
       type: "list",
       message: "What color would you like your logo text to be?",
       name: "colorTextLogo",
-      choices: ["red", "green", "blue"]
+      choices: ["red", "green", "blue", "yellow", "orange", "blue", "purple"]
     },
     {
       type: "list",
@@ -32,7 +32,7 @@ function init() {
       type: "list",
       message: "What color would you like your logo to be?",
       name: "colorLogo",
-      choices: ["red", "green", "blue"]
+      choices: ["red", "green", "blue", "yellow", "orange", "blue", "purple"]
     }
   ]).then(answers => {
     console.log(answers);
