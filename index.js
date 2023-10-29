@@ -13,8 +13,9 @@ function init() {
   inquirer.prompt([
     {
       type: "input",
-      message: "What text would you like in your logo? (limit to 3 letters)",
+      message: "What text would you like in your logo? (limit to 3 characters)",
       name: "textLogo",
+      //validate the input length of the characters
       validate: function (input) {
         if (input.length > 3) {
           done("It must be less than 3 letters");
@@ -57,6 +58,9 @@ function init() {
     }
     let myOutput = shape.renderSVG();
     console.log("myOutput = ", myOutput);
+    // Generated logo.svg is print inline command
+    console.log("Generated logo.svg!");
+    //write the logomaker.svg file
     writeFile("logomaker.svg", myOutput);
   })
 }
