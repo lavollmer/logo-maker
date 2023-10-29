@@ -10,8 +10,6 @@ const { Circle } = require("./lib/shapes.js");
 
 // intiatilizes the write file with SVG
 function init() {
-  //write the logosvg file
-  // inquirer.prompt().then(answers => {
   inquirer.prompt([
     {
       type: "input",
