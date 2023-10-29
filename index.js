@@ -13,8 +13,15 @@ function init() {
   inquirer.prompt([
     {
       type: "input",
-      message: "What text would you like in your logo?",
-      name: "textLogo"
+      message: "What text would you like in your logo? (limit to 3 letters)",
+      name: "textLogo",
+      validate: function (input) {
+        if (input.length > 3) {
+          done("It must be less than 3 letters");
+          return;
+        }
+        return true;
+      }
     },
     {
       type: "list",
